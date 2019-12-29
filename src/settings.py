@@ -10,7 +10,7 @@ Database identifiers and annotation labels
 DB_NAME = 'cm'
 
 # metadata mappings of the conversational datasets
-DATASETS = {'scs': {'utterances': 'turns', 'speaker': 'role', 'id': 0},
+DATASETS = {'scs': {'utterances': 'turns', 'speaker': 'role', 'id': 0, 'A_User': 'Seeker', 'B_Receiver': 'Assistant'},
             'ccpe': {'utterances': 'utterances', 'speaker': 'speaker', 'id': 1},
             'msdialog': {'utterances': 'utterances', 'speaker': 'actor_type', 'id': 2},
             'multiwoz': {'utterances': 'log', 'speaker': 'speaker', 'id': 3},

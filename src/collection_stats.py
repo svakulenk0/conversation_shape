@@ -27,7 +27,8 @@ def get_das_distribution(col_name):
 
     for doc in cursor:
         for m in doc[cmap['utterances']]:
-            das[m[cmap['speaker']]][m['da']] += 1
+            speaker = cmap[m[cmap['speaker']]]
+            das[speaker][m['da']] += 1
     print(das)
 
 
