@@ -27,9 +27,6 @@ def annotate_das(col_name):
     collection = mongo[DB_NAME][col_name]
     cursor = collection.find({'das': {"$exists": False}})
     for doc in cursor:
-        # skip already annotated dialogs
-        if 'da' in doc[cmap['utterances']][0]:
-            continue
         # predict DA labels for all utterances in the dialog
         utterances = [m['text'] for m in doc[cmap['utterances']]]
         predictions, raw_outputs = model.predict(utterances)
