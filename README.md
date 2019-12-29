@@ -5,16 +5,28 @@ Python library for advanced conversation analysis.
 
 ## Requirements
 
-* pymongo
+* torch
 * simpletransformers
+* pymongo
 * sklearn
 * seaborn
 
 
 ## Approach
 
-1. Dialog annotation
-    1.1. Utterance classification
-    1.2. Vocabulary reuse pattern
+1. Dialog annotation  
+    1.1. Utterance classification labels  
 
-2. Dialog classification
+```
+python src/da_annotation.py *mongo_collection_name*
+python stc/collection_stats.py *mongo_collection_name*
+```
+
+    1.2. Vocabulary reuse patterns  
+
+```
+x
+x
+```
+
+2. Dialog classification  
