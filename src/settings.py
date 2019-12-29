@@ -16,7 +16,8 @@ DATASETS = {'scs': {'utterances': 'turns', 'speaker': 'role', 'text': 'text', 'i
             'msdialog': {'utterances': 'utterances', 'speaker': 'actor_type', 'text': 'utterance', 'id': 2},
             'multiwoz': {'utterances': 'log', 'speaker': 'speaker', 'text': 'text', 'id': 3,
                          'Seeker': 'Seeker', 'Assistant': 'Assistant'},
-            'redial': {'utterances': 'messages', 'speaker': 'senderWorkerId', 'text': 'text', 'id': 4},
+            'redial': {'utterances': 'messages', 'speaker': 'speaker', 'text': 'text', 'id': 4,
+                       'Seeker': 'Seeker', 'Assistant': 'Assistant'},
             'wow': {'utterances': 'dialog', 'speaker': 'speaker', 'text': 'text', 'id': 5}
             }
 
