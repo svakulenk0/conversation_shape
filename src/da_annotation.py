@@ -36,7 +36,7 @@ def annotate_das(col_name):
         doc['das'] = Binary(pickle.dumps(predictions, protocol=2))
         for j, m in enumerate(doc[cmap['utterances']]):
             m['da'] = DA_LABELS[predictions[j]]
-        collection.update({'_id': doc['_id']}, {"$set": doc}, upsert=True, check_keys=False)
+        collection.update_one({'_id': doc['_id']}, {"$set": doc}, upsert=True, bypass_document_validation=True)
 
     # show a sampe dialogue
     sample_doc = collection.find_one()
