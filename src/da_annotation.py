@@ -30,7 +30,7 @@ def annotate_das(col_name):
     cursor = collection.find({'das': {"$exists": False}})
     for doc in cursor:
         # predict DA labels for all utterances in the dialog
-        utterances = [m['text'] for m in doc[cmap['utterances']]]
+        utterances = [m[cmap['text']] for m in doc[cmap['utterances']]]
         predictions, raw_outputs = model.predict(utterances)
         # annotate all utterances with DA labels
         doc['das'] = Binary(pickle.dumps(predictions, protocol=2))
@@ -40,7 +40,7 @@ def annotate_das(col_name):
 
     # show a sampe dialogue
     sample_doc = collection.find_one()
-    print (sample_doc[cmap['utterances']][2]['text'])
+    print (sample_doc[cmap['utterances']][2][cmap['text']])
     print (sample_doc[cmap['utterances']][2]['da'])
     print(pickle.loads(sample_doc['das']).tolist())
 
