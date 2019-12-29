@@ -37,5 +37,5 @@ x
 Get collection statistics:
 
 ```
-python stc/collection_stats.py *mongo_collection_name*
+python src/collection_stats.py *mongo_collection_name*
 ```
