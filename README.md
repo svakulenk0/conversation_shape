@@ -20,6 +20,7 @@ Python library for advanced conversation analysis.
 
 ```
 python src/da_annotation.py *mongo_collection_name*
+e.g. python src/da_annotation.py scs
 ```
 
 1.2. Vocabulary reuse patterns
