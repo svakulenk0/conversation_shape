@@ -43,6 +43,7 @@ def annotate_das(col_name):
     sample_doc = collection.find_one()
     print (sample_doc[cmap['utterances']][2]['text'])
     print (sample_doc[cmap['utterances']][2]['da'])
+    print(sample_doc['das'])
 
     get_das_distribution(col_name)
 
