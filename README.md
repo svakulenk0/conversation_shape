@@ -14,14 +14,15 @@ Python library for advanced conversation analysis.
 
 ## Approach
 
-1. Dialog annotation
-    1.1. Utterance classification labels  
+1. Dialog annotation  
+
+1.1. Utterance classification labels  
 
 ```
-python src/da_annotation.py *mongo_collection_name*
+python src/da_annotation.py*mongo_collection_name
 ```
 
-    1.2. Vocabulary reuse patterns
+1.2. Vocabulary reuse patterns
 
 ```
 x
