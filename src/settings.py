@@ -11,7 +11,11 @@ DB_NAME = 'cm'
 
 # metadata mappings of the conversational datasets
 DATASETS = {'scs': {'utterances': 'turns', 'speaker': 'role', 'id': 0},
-            'ccpe': {'utterances': 'utterances', 'speaker': 'speaker', 'id': 1}
+            'ccpe': {'utterances': 'utterances', 'speaker': 'speaker', 'id': 1},
+            'msdialog': {'utterances': 'utterances', 'speaker': 'actor_type', 'id': 2},
+            'multiwoz': {'utterances': 'log', 'speaker': 'speaker', 'id': 3},
+            'redial': {'utterances': 'messages', 'speaker': 'senderWorkerId', 'id': 4},
+            'wow': {'utterances': 'dialog', 'speaker': 'speaker', 'id': 5}
             }
 
 DA_LABELS = ['Statement', 'Emotion', 'Greet', 'Accept', 'Reject', 'whQuestion', 'Continuer',
