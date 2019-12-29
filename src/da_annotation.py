@@ -25,7 +25,7 @@ def annotate_das(col_name):
     cmap = DATASETS[col_name]
     
     collection = mongo[DB_NAME][col_name]
-    cursor = collection.find({'das': {"$exist": False}})
+    cursor = collection.find({'das': {"$exists": False}})
     for doc in cursor:
         # skip already annotated dialogs
         if 'da' in doc[cmap['utterances']][0]:
