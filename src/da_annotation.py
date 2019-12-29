@@ -25,7 +25,7 @@ def annotate_das(col_name):
     cmap = DATASETS[col_name]
     
     collection = mongo[DB_NAME][col_name]
-    cursor = collection.find()
+    cursor = collection.find({'das': {"$exist": False}})
     for doc in cursor:
         # skip already annotated dialogs
         if 'da' in doc[cmap['utterances']][0]:
@@ -34,8 +34,9 @@ def annotate_das(col_name):
         utterances = [m['text'] for m in doc[cmap['utterances']]]
         predictions, raw_outputs = model.predict(utterances)
         # annotate all utterances with DA labels
-        for m in doc[cmap['utterances']]:
-            m['da'] = DA_LABELS[predictions[0]]
+        doc['das'] = predictions[0]
+        for j, m in enumerate(doc[cmap['utterances']]):
+            m['da'] = DA_LABELS[predictions[0][j]]
         collection.update_one({'_id': doc['_id']}, {"$set": doc}, upsert=True)
 
     # show a sampe dialogue
