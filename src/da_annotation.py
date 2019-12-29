@@ -12,6 +12,7 @@ from pymongo import MongoClient
 from simpletransformers.classification import ClassificationModel
 
 from settings import *
+from collection_stats import get_das_distribution
 
 # load pre-trained Transformer model with 14 DAs
 model = ClassificationModel('roberta', './da_model/', num_labels=len(DA_LABELS))
@@ -41,6 +42,8 @@ def annotate_das(col_name):
     sample_doc = collection.find_one()
     print (sample_doc[cmap['utterances']][2]['text'])
     print (sample_doc[cmap['utterances']][2]['da'])
+
+    get_das_distribution(col_name)
 
 
 if __name__ == '__main__':
