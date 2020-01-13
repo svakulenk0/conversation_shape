@@ -19,8 +19,16 @@ Python 3.6
 
 2. Add field mappings for your collection in settings.py specifying the structure of the dictionary object.
 
-Each conversation transcript is a dictionary that contains the list of *utterances*. Each utterance in turn consists of a 
-*text* field that stores a String value of the utterance content and a *speaker* label which is used to identify to whom of the conversation participants the utterance belongs. Finally add bi-directional mappings for speaker labels to identify *Seeker* and *Assistant* roles among the conversation participants.
+Each conversation transcript is a dictionary that contains the list of **utterances**. Each utterance in turn consists of a 
+**text** field that stores a String value of the utterance content and a **speaker** label which is used to identify to whom of the conversation participants the utterance belongs. Finally add bi-directional mappings for speaker labels to identify **Seeker** and **Assistant** roles among the conversation participants.
+
+Example:
+
+```
+'msdialog': {'utterances': 'utterances', 'speaker': 'actor_type', 'text': 'utterance', 'id': 2,
+             'User': 'Seeker', 'Agent': 'Assistant',
+             'Seeker': 'User', 'Assistant': 'Agent'},
+```
 
 ## Approach
 
