@@ -34,7 +34,9 @@ DATASETS = {'scs': {'utterances': 'turns', 'speaker': 'role', 'text': 'text', 'i
                         'Human': 'Seeker', 'Bot': 'Assistant'},
             'control': {'utterances': 'dialog', 'speaker': 'speaker', 'text': 'text', 'id': 8,
                         'Seeker': 'human_evaluator', 'Assistant': 'model',
-                        'human_evaluator': 'Seeker', 'model': 'Assistant'}
+                        'human_evaluator': 'Seeker', 'model': 'Assistant'},
+            'meena': {'utterances': 'utterances', 'speaker': 'role', 'text': 'text', 'id': 9,
+                      'Seeker': 'Seeker', 'Assistant': 'Assistant'}            
             }
 
 DA_LABELS = ['Statement', 'Emotion', 'Greet', 'Accept', 'Reject', 'whQuestion', 'Continuer',
