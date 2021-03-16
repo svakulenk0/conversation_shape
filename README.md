@@ -2,6 +2,8 @@
 
 Python library for conversation analysis.
 
+Dialogue fingerprints: https://uvaauas.figshare.com/articles/dataset/dialogue_fingerprints/13356350
+
 
 ## Requirements
 
